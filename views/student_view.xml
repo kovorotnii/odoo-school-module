@@ -29,6 +29,29 @@
             </field>
         </record>
 
+
+        <!-- parent view -->
+        <record model="ir.ui.view" id="parent_form_view">
+            <field name="name">parent.form</field>
+            <field name="model">parent.parent</field>
+            <field name="arch" type="xml">
+                <form string="Parent Form">
+                    <header><button string="This is header button"></button></header>
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="student" />
+                            <field name="teacher" />
+                            <field name="test" />
+                        </group>
+                        <notebook>
+                            <page string="This is notebook"></page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <!-- Parent actions -->
         <record id="parent_menu_action" model="ir.actions.act_window">
             <field name="name">Parents</field>
@@ -36,10 +59,10 @@
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
-                    <p class="oe_view_nocontent_create">Create The First Teacher!
+                <p class="oe_view_nocontent_create">Create The First Teacher!
                             </p>
-                </field>
-            </record>
+            </field>
+        </record>
 
         <!-- Parent menu item -->
         <menuitem id="school_menu" name="School-main" />
