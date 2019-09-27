@@ -6,8 +6,10 @@ class Parent(models.Model):
     # model name
     _name = 'parent.parent'
 
-    name = fields.Char(string='Name', required=True)
+    # Names for fields set in xml
+    name = fields.Char(required=True)
+    test = fields.Char()
     # link parent with student
-    student = fields.Many2one('student.student', required=True) 
+    student = fields.Many2one('student.student') 
     # link parent with teacher
-    teacher = fields.Many2one('teacher.teacher', required=True)
+    teacher = fields.Many2one('teacher.teacher')
