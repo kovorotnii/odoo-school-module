@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "school12",
+    'name': "school-v2",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': """ School module""",
 
-    'description': """Init module for testing purposes""",
+    'description': """School module for testing purposes""",
 
-    'author': "kovorotniy1",
-    'website': "www.github.com/kovorotniy",
+    'author': "kovorotniy",
+    'website': "https://www.github.com/kovorotniy/odoo-school-module",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
