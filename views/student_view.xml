@@ -40,12 +40,15 @@
                     <sheet>
                         <group>
                             <field name="name" />
+                            <field name="age"/>
                             <field name="student" />
                             <field name="teacher" />
                             <field name="test" />
+                            <field name="onchange_field"/>
                         </group>
                         <notebook>
-                            <page string="This is notebook"></page>
+                            <page string="The notebook title"></page>
+                            
                         </notebook>
                     </sheet>
                 </form>
