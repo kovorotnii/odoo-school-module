@@ -6,7 +6,7 @@ class TeacherTeacher(models.Model):
     # model name
     _name = 'teacher.teacher'
 
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(string='Name', required=True, default='Petr Ivanovich')
     age = fields.Integer(string='Age', required=True)
     teacher_dob = fields.Date(string='Date of birth')
 
