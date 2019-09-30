@@ -1,0 +1,49 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<odoo>
+        <data>
+            <!-- Actions go before <menuitem>!. It's crucial -->
+           
+                <!-- parent view -->
+            <record model="ir.ui.view" id="parent_form_view">
+                <field name="name">parent.form</field>
+                <field name="model">parent.parent</field>
+                <field name="arch" type="xml">
+                    <form string="Parent Form">
+                        <header>
+                            <button string="This is header button"></button>
+                        </header>
+                        <sheet>
+                            <group colspan="2" col="2">
+                                <separator string="Main options" colspan="2" />
+                                <field name="name" />
+                                <field name="age" />
+                            </group>
+                            <group colspan="4" col="4">
+                                <separator string="Secondary options" colspan="3" />
+                                <field name="student" />
+                                <field name="teacher" />
+                                <field name="test" />
+                                <field name="onchange_field" />
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </record>
+    
+            <!-- Parent actions -->
+            <record id="parent_menu_action" model="ir.actions.act_window">
+                <field name="name">Parents</field>
+                <field name="res_model">parent.parent</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="help" type="html">
+                    <p class="oe_view_nocontent_create">Create The First Teacher!
+                                </p>
+                </field>
+            </record>
+    
+            <!-- child element Parent -->
+            <menuitem id="school_parent_menu" parent="school_menu" name="Parent" action="parent_menu_action" />
+    
+        </data>
+    </odoo>

@@ -16,68 +16,38 @@
             </field>
         </record>
 
-        <!-- Teachers action -->
-        <record id="teacher_menu_action" model="ir.actions.act_window">
-            <field name="name">Teachers</field>
-            <field name="res_model">teacher.teacher</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <!--<field name="domain">[]</field>-->
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create The First Teacher!
-                        </p>
-            </field>
-        </record>
-
-
-        <!-- parent view -->
-        <record model="ir.ui.view" id="parent_form_view">
-            <field name="name">parent.form</field>
-            <field name="model">parent.parent</field>
+        <!-- search view for students -->
+        <record id="student_search_view" model="ir.ui.view">
+            <field name="name">Students search view</field>
+            <field name="model">student.student</field>
             <field name="arch" type="xml">
-                <form string="Parent Form">
-                    <header><button string="This is header button"></button></header>
-                    <sheet>
-                        <group>
-                            <field name="name" />
-                            <field name="age"/>
-                            <field name="student" />
-                            <field name="teacher" />
-                            <field name="test" />
-                            <field name="onchange_field"/>
-                        </group>
-                        <notebook>
-                            <page string="The notebook title"></page>
-                            
-                        </notebook>
-                    </sheet>
-                </form>
+                <search string="Search student">
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="nationality"/>
+
+                    <!-- create filter fields -->
+                    <filter string="Male" name="male" domain="[('gender', '=', 'male')]"
+                        help="Students with male gender"/>
+                    <filter string="Female" name="female" domain="[('gender', '=', 'female')]"
+                        help="Students with female gender"/>
+                    <filter string="Others" name="others" domain="[('gender', '=', 'others')]"
+                        help="Students with other"/>  
+                        <!-- group by section as a button "Group by -->
+                    <group expand="1" string="Group by">
+                        <filter string="Nationality" name="nationality" context="{'group_by':'nationality'}"/>
+                        <filter string="Blood group" name="blood_group" context="{'group_by':'student_blood_group'}"/>
+                    </group>
+                </search>
             </field>
         </record>
-
-        <!-- Parent actions -->
-        <record id="parent_menu_action" model="ir.actions.act_window">
-            <field name="name">Parents</field>
-            <field name="res_model">parent.parent</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">Create The First Teacher!
-                            </p>
-            </field>
-        </record>
-
+    
+       
         <!-- Parent menu item -->
         <menuitem id="school_menu" name="School-main" />
 
         <!-- Child element student -->
         <menuitem id="school_student_menu" parent="school_menu" name="Student" action="student_menu_action" />
-
-        <!-- Child element Teacher -->
-        <menuitem id="school_teacher_menu" parent="school_menu" name="Teacher" action="teacher_menu_action" />
-
-        <!-- child element Parent -->
-        <menuitem id="school_parent_menu" parent="school_menu" name="Parent" action="parent_menu_action" />
 
     </data>
 </odoo>
