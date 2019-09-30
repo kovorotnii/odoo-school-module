@@ -9,6 +9,12 @@
             <field name="res_model">student.student</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="student_search_view"/>
+            
+            <!-- set default search for male students -->
+            <field name="context">{'search_default_male':1}</field> 
+
+            
             <!--<field name="domain">[]</field>-->
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">Create The First Student!!!
