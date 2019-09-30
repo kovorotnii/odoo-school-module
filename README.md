@@ -1,3 +1,3 @@
 # odoo-school-module
 
-### School module for odoo
+### School module for odoo 12
